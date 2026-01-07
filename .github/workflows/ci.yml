@@ -14,13 +14,17 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: show branch name
-        run: echo "Branch name: $ {{github.ref_name}} "    
+         
 
       - name: Show commit message
         run: |
           echo "Commit message:"
           echo "${{ github.event.head_commit.message }}"
+      
+      - name: show branch name
+        run: |
+          
+          echo "Branch name: $ {{ github.ref_name }} " 
 
       - name: Run test
         run: python test_app.py
