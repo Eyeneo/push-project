@@ -14,5 +14,10 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Show commit message
+        run: |
+          echo "Commit message:"
+          echo "${{ github.event.head_commit.message }}"
+
       - name: Run test
         run: python test_app.py
